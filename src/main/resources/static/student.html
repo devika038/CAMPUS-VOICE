@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Campus Voice</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+  <script src="js/student.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><div class="header-inner"><a class="brand" href="student.html"><span class="brand-mark">CV</span><span>Campus Voice</span></a><div class="header-user"><span class="greeting" id="studentGreeting"></span><span class="role-badge" id="studentRole"></span><button class="button button-light" data-logout>Logout</button></div></div></header>
+  <main class="page-wrap"><div class="page-intro"><div><p class="eyebrow">Your voice matters</p><h1>Student / Faculty Dashboard</h1><p>Submit a concern and keep track of its progress.</p></div></div>
+    <div class="student-layout">
+      <section class="card form-card"><div class="section-heading"><div><p class="eyebrow">Tell us what happened</p><h2>Submit a grievance</h2></div><span class="heading-icon">01</span></div>
+        <form id="complaintForm" novalidate>
+          <label>Complaint title<input id="complaintTitle" type="text" maxlength="120" required placeholder="A short summary of the issue"></label>
+          <div class="form-row"><label>Category<select id="complaintCategory" required></select></label><label>Department<select id="complaintDepartment" required></select></label></div>
+          <label>Description<textarea id="complaintDescription" rows="6" maxlength="3000" required placeholder="Describe the concern and where it occurred."></textarea></label>
+          <p class="form-error" id="complaintError" role="alert" aria-live="polite"></p>
+          <button class="button primary full" type="submit">Submit Grievance</button>
+        </form>
+      </section>
+      <section class="card complaints-card"><div class="section-heading"><div><p class="eyebrow">Your submissions</p><h2>My Complaints</h2></div><span class="count-pill" id="myComplaintCount">0</span></div>
+        <div class="table-wrap"><table><thead><tr><th>ID</th><th>Title</th><th>Category</th><th>Date</th><th>Priority</th><th>Status</th><th>Details</th></tr></thead><tbody id="myComplaintsBody"></tbody></table></div>
+        <div class="empty-state" id="studentEmpty"><span class="empty-icon">—</span><h3>No complaints yet</h3><p>When you submit a grievance, it will appear here.</p></div>
+      </section>
+    </div>
+  </main>
+  <dialog class="modal" id="complaintDetails"><div class="modal-head"><div><p class="eyebrow">Complaint record</p><h2 id="detailTitle">Complaint details</h2></div><button class="icon-button" type="button" data-close-dialog aria-label="Close">×</button></div><div id="detailContent"></div></dialog>
+</body>
+</html>

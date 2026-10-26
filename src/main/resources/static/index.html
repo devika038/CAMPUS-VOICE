@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus Voice | Hear · Report · Resolve</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body class="auth-page">
+  <main class="auth-shell">
+    <a class="brand auth-brand" href="index.html" aria-label="Campus Voice home"><span class="brand-mark">CV</span><span>Campus Voice</span></a>
+    <p class="tagline">Hear · Report · Resolve</p>
+    <section class="auth-card card">
+      <div class="auth-heading"><p class="eyebrow">A better campus starts with a voice</p><h1>Welcome to Campus Voice</h1><p>Share a concern and follow its progress with your campus team.</p></div>
+      <div class="tabs" role="tablist" aria-label="Account access"><button class="tab active" id="loginTab" role="tab" aria-selected="true" aria-controls="loginPanel">Login</button><button class="tab" id="signupTab" role="tab" aria-selected="false" aria-controls="signupPanel">Sign Up</button></div>
+      <div id="loginPanel" role="tabpanel" aria-labelledby="loginTab">
+        <form id="loginForm" novalidate>
+          <label>Email address<input id="loginEmail" type="email" autocomplete="email" required></label>
+          <label>Password<input id="loginPassword" type="password" autocomplete="current-password" required></label>
+          <label>Role<select id="loginRole" required><option value="">Select your role</option><option>Student</option><option>Faculty</option><option>Department Administrator</option></select></label>
+          <p class="form-error" id="loginError" role="alert" aria-live="polite"></p>
+          <button class="button primary full" type="submit">Login</button>
+        </form>
+      </div>
+      <div id="signupPanel" role="tabpanel" aria-labelledby="signupTab" hidden>
+        <form id="signupForm" novalidate>
+          <label>Full name<input id="signupName" type="text" autocomplete="name" required></label>
+          <label>Email address<input id="signupEmail" type="email" autocomplete="email" required></label>
+          <label>Password<input id="signupPassword" type="password" autocomplete="new-password" minlength="8" required><span class="field-hint">Use at least 8 characters.</span></label>
+          <label>Confirm password<input id="confirmPassword" type="password" autocomplete="new-password" required></label>
+          <label>Role<select id="signupRole" required><option value="">Select your role</option><option>Student</option><option>Faculty</option><option>Department Administrator</option></select></label>
+          <label id="signupDepartmentField" hidden>Department<select id="signupDepartment"><option value="">Select a department</option></select></label>
+          <p class="form-error" id="signupError" role="alert" aria-live="polite"></p>
+          <button class="button primary full" type="submit">Create account</button>
+        </form>
+      </div>
+      <p class="privacy-note">Connected securely to Campus Voice server.</p>
+    </section>
+    <p class="auth-footer">A clear path from concern to resolution.</p>
+  </main>
+</body>
+</html>

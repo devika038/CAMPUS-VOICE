@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Department Administration | Campus Voice</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+  <script src="js/admin.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><div class="header-inner"><a class="brand" href="admin.html"><span class="brand-mark">CV</span><span>Campus Voice</span></a><div class="header-user"><div class="admin-welcome"><strong id="adminName"></strong><span id="adminDepartment"></span></div><span class="open-count"><strong id="openPriorityCount">0</strong><span>Open high priority</span></span><button class="button button-light" data-logout>Logout</button></div></div></header>
+  <main class="page-wrap"><div class="page-intro"><div><p class="eyebrow">Department workspace</p><h1>Complaint management</h1><p>Review reports, record decisions and monitor department trends.</p></div></div>
+    <section class="summary-grid" id="summaryGrid" aria-label="Complaint summary"></section>
+    <section class="card admin-list-card"><div class="section-heading admin-list-heading"><div><p class="eyebrow">Department queue</p><h2>Complaints</h2></div><span class="count-pill" id="adminComplaintCount">0</span></div>
+      <div class="filters"><label class="search-field">Search by ID or keyword<input id="complaintSearch" type="search" placeholder="Search complaints"></label><label>Status<select id="statusFilter"><option value="">All statuses</option><option>PENDING</option><option>ASSIGNED</option><option>IN_PROGRESS</option><option>RESOLVED</option><option>REJECTED</option></select></label><label>Priority<select id="priorityFilter"><option value="">All priorities</option><option>CRITICAL</option><option>HIGH</option><option>MEDIUM</option><option>LOW</option></select></label></div>
+      <div class="complaint-list" id="adminComplaintList"></div><div class="empty-state" id="adminEmpty"><span class="empty-icon">—</span><h3>No department complaints</h3><p>Complaints submitted to your department will appear here.</p></div>
+    </section>
+  </main>
+  <dialog class="modal update-modal" id="updateDialog"><form id="updateForm" novalidate><div class="modal-head"><div><p class="eyebrow">Record an update</p><h2 id="updateHeading">Update status</h2></div><button class="icon-button" type="button" data-close-dialog aria-label="Close">×</button></div><div id="updateComplaintSummary" class="update-summary"></div><label>New status<select id="nextStatus" required></select></label><label>Remarks<textarea id="updateRemarks" rows="4" maxlength="1500" placeholder="Add a note to the audit trail."></textarea></label><p class="form-error" id="updateError" role="alert" aria-live="polite"></p><button class="button primary full" type="submit">Confirm &amp; Save Audit Entry</button></form></dialog>
+  <dialog class="modal" id="adminDetails"><div class="modal-head"><div><p class="eyebrow">Complaint record</p><h2 id="adminDetailTitle">Complaint details</h2></div><button class="icon-button" type="button" data-close-dialog aria-label="Close">×</button></div><div id="adminDetailContent"></div></dialog>
+</body>
+</html>
